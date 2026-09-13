@@ -1,24 +1,374 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Prompt Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #111827, #312e81);
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .search {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 25px;
+            outline: none;
+        }
+
+        h2 {
+            margin: 25px 0 15px;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .category {
+            border: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: #1e293b;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .category:hover {
+            background: #4f46e5;
+        }
+
+        .prompts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            padding: 20px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .prompt {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .copy-btn {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            border-radius: 9px;
+            background: #4f46e5;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background: #6366f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 10px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            header {
+                padding: 35px 15px;
+            }
+
+            .container {
+                padding: 20px 12px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
+<header>
     <h1>🤖 AI Prompt Hub</h1>
-
     <p>Discover powerful AI prompts for everything you need.</p>
+</header>
 
-    <h2>Categories</h2>
+<div class="container">
 
-    <button>🎨 Image Prompts</button>
-    <button>✍️ Writing Prompts</button>
-    <button>💻 Coding Prompts</button>
-    <button>📱 Social Media Prompts</button>
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="🔎 Search prompts..."
+        onkeyup="searchPrompts()"
+    >
 
-    <h2>🔥 Popular Prompt</h2>
+    <h2>📂 Categories</h2>
 
-    <p>Create a cinematic photograph of a futuristic city at night, with neon lights, realistic details and dramatic lighting.</p>
+    <div class="categories">
+        <button class="category" onclick="filterCategory('all')">
+            🌟 All
+        </button>
 
-    <button>📋 Copy Prompt</button>
+        <button class="category" onclick="filterCategory('image')">
+            🎨 Image
+        </button>
+
+        <button class="category" onclick="filterCategory('writing')">
+            ✍️ Writing
+        </button>
+
+        <button class="category" onclick="filterCategory('coding')">
+            💻 Coding
+        </button>
+
+        <button class="category" onclick="filterCategory('social')">
+            📱 Social Media
+        </button>
+    </div>
+
+    <h2>🔥 Popular Prompts</h2>
+
+    <div class="prompts" id="promptList">
+
+        <div class="card" data-category="image">
+            <h3>🎨 Cinematic Image</h3>
+
+            <p class="prompt">
+                Create a cinematic photograph of a futuristic city
+                at night, with neon lights, realistic details,
+                dramatic lighting and an ultra-detailed atmosphere.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card" data-category="image">
+            <h3>📸 Portrait</h3>
+
+            <p class="prompt">
+                Create a professional portrait photograph with
+                realistic skin texture, cinematic lighting,
+                sharp facial details, natural colors and a
+                high-end photography style.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card" data-category="writing">
+            <h3>✍️ Content Writer</h3>
+
+            <p class="prompt">
+                Act as an expert content writer. Create engaging,
+                clear and easy-to-understand content about the
+                given topic. Use headings, examples and a friendly tone.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card" data-category="coding">
+            <h3>💻 Coding Assistant</h3>
+
+            <p class="prompt">
+                Act as an expert programmer. Explain the code
+                step by step, find possible errors, improve the
+                code and provide a simple explanation for beginners.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card" data-category="social">
+            <h3>📱 Instagram Caption</h3>
+
+            <p class="prompt">
+                Create 10 creative Instagram captions for the
+                given post. Make them catchy, short and suitable
+                for social media.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card" data-category="coding">
+            <h3>🚀 Website Builder</h3>
+
+            <p class="prompt">
+                Create a modern responsive website using HTML,
+                CSS and JavaScript. Make the design clean,
+                professional, mobile-friendly and easy to use.
+            </p>
+
+            <button class="copy-btn"
+                onclick="copyPrompt(this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>🤖 AI Prompt Hub © 2026</p>
+</footer>
+
+
+<script>
+
+function copyPrompt(button) {
+
+    const card = button.parentElement;
+
+    const prompt = card.querySelector(".prompt").innerText;
+
+    navigator.clipboard.writeText(prompt).then(function() {
+
+        const oldText = button.innerText;
+
+        button.innerText = "✅ Copied!";
+
+        setTimeout(function() {
+            button.innerText = oldText;
+        }, 1500);
+
+    });
+
+}
+
+
+function filterCategory(category) {
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+
+        if (category === "all" ||
+            card.dataset.category === category) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+function searchPrompts() {
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
 </body>
 </html>
