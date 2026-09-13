@@ -7,7 +7,6 @@
 <title>Nano Banana Prompts</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,12 +14,10 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f7f7f5;
     color:#171717;
 }
-
-/* HEADER */
 
 header{
     background:white;
@@ -39,27 +36,20 @@ header{
     font-weight:bold;
 }
 
-.logo span{
-    font-size:27px;
-}
-
 nav a{
     margin-left:22px;
     text-decoration:none;
     color:#444;
-    font-size:14px;
 }
-
-/* HERO */
 
 .hero{
     text-align:center;
-    padding:70px 20px 50px;
-    background:linear-gradient(135deg,#fff7d6,#ffffff);
+    padding:65px 20px 45px;
+    background:linear-gradient(135deg,#fff7d6,#fff);
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:46px;
     margin-bottom:15px;
 }
 
@@ -71,27 +61,18 @@ nav a{
     line-height:1.6;
 }
 
-/* SEARCH */
-
-.search-box{
+.search{
     max-width:650px;
     margin:30px auto 0;
 }
 
-.search-box input{
+.search input{
     width:100%;
-    padding:17px 20px;
+    padding:17px;
     border:1px solid #ddd;
     border-radius:12px;
     font-size:16px;
-    outline:none;
 }
-
-.search-box input:focus{
-    border-color:#999;
-}
-
-/* CONTAINER */
 
 .container{
     max-width:1200px;
@@ -104,22 +85,19 @@ nav a{
     margin-bottom:20px;
 }
 
-/* CATEGORIES */
-
 .categories{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .category{
-    padding:11px 17px;
     border:1px solid #ddd;
     background:white;
+    padding:10px 16px;
     border-radius:30px;
     cursor:pointer;
-    transition:.2s;
 }
 
 .category:hover{
@@ -127,74 +105,63 @@ nav a{
     color:white;
 }
 
-/* GALLERY */
-
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:24px;
 }
 
-/* CARD */
-
 .card{
     background:white;
+    border:1px solid #e5e5e5;
     border-radius:16px;
     overflow:hidden;
-    border:1px solid #e5e5e5;
-    transition:.25s;
+    transition:.2s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-/* IMAGE */
-
-.card-image{
+.card img{
     width:100%;
-    height:250px;
+    height:280px;
     object-fit:cover;
     display:block;
 }
-
-/* CARD CONTENT */
 
 .card-content{
     padding:18px;
 }
 
-.card h3{
-    margin-bottom:10px;
-    font-size:19px;
-}
-
-.category-label{
+.tag{
     display:inline-block;
-    font-size:12px;
     background:#f1f1f1;
     padding:5px 9px;
     border-radius:20px;
-    margin-bottom:12px;
+    font-size:12px;
+    margin-bottom:10px;
 }
 
-.card p{
+.card h3{
+    margin-bottom:10px;
+}
+
+.prompt{
     color:#666;
-    line-height:1.5;
+    line-height:1.6;
     font-size:14px;
     margin-bottom:15px;
 }
 
-/* BUTTON */
-
 .copy-btn{
     width:100%;
-    border:none;
     padding:12px;
+    border:none;
+    border-radius:9px;
     background:#171717;
     color:white;
-    border-radius:9px;
     cursor:pointer;
     font-size:14px;
 }
@@ -203,65 +170,36 @@ nav a{
     background:#333;
 }
 
-/* FOOTER */
-
 footer{
     margin-top:50px;
-    padding:40px 20px;
     background:#171717;
-    color:#bbb;
+    color:#aaa;
     text-align:center;
+    padding:40px 20px;
 }
-
-footer a{
-    color:#bbb;
-    text-decoration:none;
-    margin:0 8px;
-}
-
-/* MOBILE */
 
 @media(max-width:650px){
-
-    header{
-        padding:15px 20px;
-    }
 
     nav{
         display:none;
     }
 
-    .hero{
-        padding:50px 18px 35px;
-    }
-
     .hero h1{
-        font-size:35px;
-    }
-
-    .hero p{
-        font-size:16px;
+        font-size:34px;
     }
 
     .gallery{
         grid-template-columns:1fr;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
 
-    <div class="logo">
-        <span>🍌</span> Nano Banana Prompts
-    </div>
+    <div class="logo">🍌 Nano Banana Prompts</div>
 
     <nav>
         <a href="#">Home</a>
@@ -272,18 +210,16 @@ footer a{
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
     <h1>🍌 Nano Banana Prompts</h1>
 
     <p>
-        Discover creative AI image prompts for portraits,
-        fashion, photography, anime, products and more.
+        Discover amazing AI image prompts and copy them
+        instantly for your own creations.
     </p>
 
-    <div class="search-box">
+    <div class="search">
 
         <input
             type="text"
@@ -297,12 +233,7 @@ footer a{
 </section>
 
 
-<!-- MAIN -->
-
 <div class="container">
-
-
-<!-- CATEGORIES -->
 
 <h2 class="section-title" id="categories">
     Explore Categories
@@ -314,40 +245,24 @@ footer a{
         🌟 All
     </button>
 
-    <button class="category" onclick="filterCategory('ecommerce')">
-        🛍️ E-commerce
-    </button>
-
-    <button class="category" onclick="filterCategory('photo')">
-        📸 Photo Editing
-    </button>
-
     <button class="category" onclick="filterCategory('portrait')">
-        👤 Portrait & Avatar
+        👤 Portrait
     </button>
 
-    <button class="category" onclick="filterCategory('character')">
-        🧙 Character Design
+    <button class="category" onclick="filterCategory('fashion')">
+        👗 Fashion
+    </button>
+
+    <button class="category" onclick="filterCategory('cinematic')">
+        🎬 Cinematic
     </button>
 
     <button class="category" onclick="filterCategory('anime')">
-        🎨 Anime & Cartoon
+        🎨 Anime
     </button>
 
-    <button class="category" onclick="filterCategory('art')">
-        🖌️ Art Style
-    </button>
-
-    <button class="category" onclick="filterCategory('interior')">
-        🏠 Interior Design
-    </button>
-
-    <button class="category" onclick="filterCategory('vfx')">
-        🎬 Visual Effects
-    </button>
-
-    <button class="category" onclick="filterCategory('logo')">
-        🔰 Logo Design
+    <button class="category" onclick="filterCategory('product')">
+        🛍️ Product
     </button>
 
     <button class="category" onclick="filterCategory('creative')">
@@ -357,302 +272,168 @@ footer a{
 </div>
 
 
-<!-- PROMPTS -->
-
 <h2 class="section-title" id="prompts">
-    🔥 Popular Prompts
+    🔥 Latest Prompts
 </h2>
 
 
 <div class="gallery" id="promptList">
 
 
-<!-- CARD 1 -->
+<!-- ================================================= -->
+<!-- ADD NEW PROMPT HERE                               -->
+<!-- COPY THIS WHOLE CARD TO ADD ANOTHER PROMPT        -->
+<!-- ================================================= -->
+
 
 <div class="card" data-category="portrait">
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
-alt="Portrait"
->
+    <!-- PUT YOUR IMAGE URL HERE -->
 
-<div class="card-content">
+    <img
+        src="YOUR_IMAGE_URL_HERE"
+        alt="Portrait prompt"
+    >
 
-<span class="category-label">
-👤 Portrait & Avatar
-</span>
+    <div class="card-content">
 
-<h3>Cinematic Portrait</h3>
+        <span class="tag">
+            👤 Portrait
+        </span>
 
-<p class="prompt">
-Create a realistic cinematic portrait with natural skin texture,
-dramatic lighting, shallow depth of field, detailed eyes,
-professional photography and a cinematic atmosphere.
-</p>
+        <h3>
+            My New Portrait Prompt
+        </h3>
 
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
+        <p class="prompt">
 
-</div>
-</div>
+            WRITE YOUR FULL AI PROMPT HERE.
 
+            You can write a long prompt here.
+            Visitors will be able to copy it.
 
-<!-- CARD 2 -->
+        </p>
 
-<div class="card" data-category="photo">
+        <button
+            class="copy-btn"
+            onclick="copyPrompt(this)"
+        >
+            📋 Copy Prompt
+        </button>
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80"
-alt="Fashion"
->
-
-<div class="card-content">
-
-<span class="category-label">
-📸 Photo Editing
-</span>
-
-<h3>Fashion Photography</h3>
-
-<p class="prompt">
-Create a high-end fashion photograph in a modern urban environment,
-professional studio-quality lighting, realistic details,
-sharp focus and premium editorial photography style.
-</p>
-
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
+    </div>
 
 </div>
-</div>
 
 
-<!-- CARD 3 -->
+<!-- ================================================= -->
+<!-- EXAMPLE PROMPT                                    -->
+<!-- ================================================= -->
 
-<div class="card" data-category="vfx">
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
-alt="Cinematic"
->
+<div class="card" data-category="cinematic">
 
-<div class="card-content">
+    <img
+        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80"
+        alt="Cinematic scene"
+    >
 
-<span class="category-label">
-🎬 Visual Effects
-</span>
+    <div class="card-content">
 
-<h3>Cinematic Movie Scene</h3>
+        <span class="tag">
+            🎬 Cinematic
+        </span>
 
-<p class="prompt">
-Transform the scene into a cinematic movie frame with atmospheric
-lighting, dramatic composition, realistic textures,
-depth and professional film photography.
-</p>
+        <h3>
+            Cinematic Movie Scene
+        </h3>
 
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
+        <p class="prompt">
 
-</div>
+            Create a cinematic movie scene with dramatic
+            lighting, realistic textures, atmospheric depth,
+            detailed environments and professional film
+            photography.
+
+        </p>
+
+        <button
+            class="copy-btn"
+            onclick="copyPrompt(this)"
+        >
+            📋 Copy Prompt
+        </button>
+
+    </div>
+
 </div>
 
 
-<!-- CARD 4 -->
-
-<div class="card" data-category="anime">
-
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80"
-alt="Anime style"
->
-
-<div class="card-content">
-
-<span class="category-label">
-🎨 Anime & Cartoon
-</span>
-
-<h3>Anime Transformation</h3>
-
-<p class="prompt">
-Transform the subject into a detailed anime character while
-preserving the main features, hairstyle, clothing, pose,
-lighting and overall composition.
-</p>
-
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
-
-</div>
-</div>
+<!-- ================================================= -->
+<!-- EXAMPLE 2                                        -->
+<!-- ================================================= -->
 
 
-<!-- CARD 5 -->
+<div class="card" data-category="fashion">
 
-<div class="card" data-category="ecommerce">
+    <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+        alt="Fashion photography"
+    >
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
-alt="Product"
->
+    <div class="card-content">
 
-<div class="card-content">
+        <span class="tag">
+            👗 Fashion
+        </span>
 
-<span class="category-label">
-🛍️ E-commerce
-</span>
+        <h3>
+            Urban Fashion
+        </h3>
 
-<h3>Premium Product Advertisement</h3>
+        <p class="prompt">
 
-<p class="prompt">
-Create a premium product advertisement with clean studio lighting,
-realistic reflections, elegant composition, sharp product details
-and professional commercial photography.
-</p>
+            Create a high-end urban fashion photograph
+            with professional lighting, realistic details,
+            modern surroundings, sharp focus and editorial
+            photography style.
 
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
+        </p>
+
+        <button
+            class="copy-btn"
+            onclick="copyPrompt(this)"
+        >
+            📋 Copy Prompt
+        </button>
+
+    </div>
 
 </div>
-</div>
 
 
-<!-- CARD 6 -->
-
-<div class="card" data-category="interior">
-
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
-alt="Interior"
->
-
-<div class="card-content">
-
-<span class="category-label">
-🏠 Interior Design
-</span>
-
-<h3>Luxury Interior</h3>
-
-<p class="prompt">
-Create a modern luxury interior with elegant furniture,
-warm natural lighting, realistic materials, detailed textures
-and professional architectural photography.
-</p>
-
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
-
-</div>
-</div>
-
-
-<!-- CARD 7 -->
-
-<div class="card" data-category="logo">
-
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
-alt="Logo design"
->
-
-<div class="card-content">
-
-<span class="category-label">
-🔰 Logo Design
-</span>
-
-<h3>Modern Brand Logo</h3>
-
-<p class="prompt">
-Design a clean modern brand identity with a memorable logo,
-minimal composition, professional typography and premium
-branding presentation.
-</p>
-
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
-
-</div>
-</div>
-
-
-<!-- CARD 8 -->
-
-<div class="card" data-category="creative">
-
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
-alt="Creative scene"
->
-
-<div class="card-content">
-
-<span class="category-label">
-✨ Creative
-</span>
-
-<h3>Surreal Creative World</h3>
-
-<p class="prompt">
-Create a visually stunning surreal world with imaginative
-elements, incredible environments, cinematic lighting,
-realistic textures and highly detailed atmosphere.
-</p>
-
-<button class="copy-btn" onclick="copyPrompt(this)">
-📋 Copy Prompt
-</button>
-
-</div>
-</div>
+<!-- ================================================= -->
+<!-- ADD MORE CARDS BELOW THIS LINE                   -->
+<!-- ================================================= -->
 
 
 </div>
 
 </div>
 
-
-<!-- FOOTER -->
 
 <footer>
 
-<p>🍌 Nano Banana Prompts © 2026</p>
+    <p>🍌 Nano Banana Prompts © 2026</p>
 
-<br>
+    <br>
 
-<p>
-Creative prompts for AI image generation.
-</p>
-
-<br>
-
-<p>
-<a href="#">About</a>
-<a href="#">Contact</a>
-<a href="#">Privacy</a>
-<a href="#">Terms</a>
-</p>
+    <p>
+        Creative AI image prompts for everyone.
+    </p>
 
 </footer>
 
-
-<!-- JAVASCRIPT -->
 
 <script>
 
@@ -660,7 +441,7 @@ function copyPrompt(button){
 
     const card = button.closest(".card");
 
-    const prompt = card.querySelector(".prompt").innerText;
+    const prompt = card.querySelector(".prompt").innerText.trim();
 
     navigator.clipboard.writeText(prompt)
     .then(function(){
@@ -676,13 +457,7 @@ function copyPrompt(button){
     })
     .catch(function(){
 
-        button.innerText = "❌ Copy failed";
-
-        setTimeout(function(){
-
-            button.innerText = "📋 Copy Prompt";
-
-        },1500);
+        alert("Unable to copy. Please try again.");
 
     });
 
@@ -702,8 +477,7 @@ function filterCategory(category){
 
             card.style.display = "block";
 
-        }
-        else{
+        }else{
 
             card.style.display = "none";
 
@@ -733,8 +507,7 @@ function searchPrompts(){
 
             card.style.display = "block";
 
-        }
-        else{
+        }else{
 
             card.style.display = "none";
 
