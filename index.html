@@ -7,212 +7,260 @@
 <title>Nano Banana Prompts</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f5;
-    color: #171717;
+body{
+    font-family:Arial, sans-serif;
+    background:#f7f7f5;
+    color:#171717;
 }
 
-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 18px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+/* HEADER */
+
+header{
+    background:white;
+    border-bottom:1px solid #e5e5e5;
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
+.logo{
+    font-size:22px;
+    font-weight:bold;
 }
 
-.logo span {
-    font-size: 27px;
+.logo span{
+    font-size:27px;
 }
 
-nav a {
-    margin-left: 22px;
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
+nav a{
+    margin-left:22px;
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
 }
 
-.hero {
-    text-align: center;
-    padding: 70px 20px 45px;
-    background: linear-gradient(135deg, #fff7d6, #ffffff);
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:70px 20px 50px;
+    background:linear-gradient(135deg,#fff7d6,#ffffff);
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
 }
 
-.hero p {
-    color: #666;
-    font-size: 18px;
-    max-width: 650px;
-    margin: auto;
-    line-height: 1.6;
+.hero p{
+    color:#666;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
 }
 
-.search-box {
-    max-width: 650px;
-    margin: 30px auto 0;
-    display: flex;
+/* SEARCH */
+
+.search-box{
+    max-width:650px;
+    margin:30px auto 0;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 17px 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
+.search-box input{
+    width:100%;
+    padding:17px 20px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 35px 20px;
+.search-box input:focus{
+    border-color:#999;
 }
 
-.section-title {
-    font-size: 28px;
-    margin-bottom: 20px;
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-.categories {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+.section-title{
+    font-size:28px;
+    margin-bottom:20px;
 }
 
-.category {
-    padding: 11px 17px;
-    border: 1px solid #ddd;
-    background: white;
-    border-radius: 30px;
-    cursor: pointer;
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:45px;
 }
 
-.category:hover {
-    background: #171717;
-    color: white;
+.category{
+    padding:11px 17px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 22px;
+.category:hover{
+    background:#171717;
+    color:white;
 }
 
-.card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #e5e5e5;
-    transition: 0.2s;
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:24px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #e5e5e5;
+    transition:.25s;
 }
 
-.image-placeholder {
-    height: 250px;
-    background: linear-gradient(135deg, #f1f1f1, #dcdcdc);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
-.card-content {
-    padding: 18px;
+/* IMAGE */
+
+.card-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 19px;
+/* CARD CONTENT */
+
+.card-content{
+    padding:18px;
 }
 
-.card p {
-    color: #666;
-    line-height: 1.5;
-    font-size: 14px;
-    margin-bottom: 15px;
+.card h3{
+    margin-bottom:10px;
+    font-size:19px;
 }
 
-.copy-btn {
-    width: 100%;
-    border: none;
-    padding: 12px;
-    background: #171717;
-    color: white;
-    border-radius: 9px;
-    cursor: pointer;
-    font-size: 14px;
+.category-label{
+    display:inline-block;
+    font-size:12px;
+    background:#f1f1f1;
+    padding:5px 9px;
+    border-radius:20px;
+    margin-bottom:12px;
 }
 
-.copy-btn:hover {
-    background: #333;
+.card p{
+    color:#666;
+    line-height:1.5;
+    font-size:14px;
+    margin-bottom:15px;
 }
 
-footer {
-    margin-top: 50px;
-    padding: 40px 20px;
-    background: #171717;
-    color: #bbb;
-    text-align: center;
+/* BUTTON */
+
+.copy-btn{
+    width:100%;
+    border:none;
+    padding:12px;
+    background:#171717;
+    color:white;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:14px;
 }
 
-@media (max-width: 650px) {
+.copy-btn:hover{
+    background:#333;
+}
 
-    header {
-        padding: 15px 20px;
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    padding:40px 20px;
+    background:#171717;
+    color:#bbb;
+    text-align:center;
+}
+
+footer a{
+    color:#bbb;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    header{
+        padding:15px 20px;
     }
 
-    nav {
-        display: none;
+    nav{
+        display:none;
     }
 
-    .hero {
-        padding: 50px 18px 35px;
+    .hero{
+        padding:50px 18px 35px;
     }
 
-    .hero h1 {
-        font-size: 35px;
+    .hero h1{
+        font-size:35px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero p{
+        font-size:16px;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    .gallery{
+        grid-template-columns:1fr;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
     <div class="logo">
-        🍌 Nano Banana Prompts
+        <span>🍌</span> Nano Banana Prompts
     </div>
 
     <nav>
@@ -223,6 +271,8 @@ footer {
 
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -247,259 +297,413 @@ footer {
 </section>
 
 
+<!-- MAIN -->
+
 <div class="container">
 
-    <h2 class="section-title" id="categories">
-        Explore Categories
-    </h2>
 
-    <div class="categories">
+<!-- CATEGORIES -->
 
-        <button class="category" onclick="filterCategory('all')">
-            🌟 All
-        </button>
+<h2 class="section-title" id="categories">
+    Explore Categories
+</h2>
 
-        <button class="category" onclick="filterCategory('portrait')">
-            👤 Portrait
-        </button>
+<div class="categories">
 
-        <button class="category" onclick="filterCategory('fashion')">
-            👗 Fashion
-        </button>
+    <button class="category" onclick="filterCategory('all')">
+        🌟 All
+    </button>
 
-        <button class="category" onclick="filterCategory('cinematic')">
-            🎬 Cinematic
-        </button>
+    <button class="category" onclick="filterCategory('ecommerce')">
+        🛍️ E-commerce
+    </button>
 
-        <button class="category" onclick="filterCategory('anime')">
-            🎨 Anime
-        </button>
+    <button class="category" onclick="filterCategory('photo')">
+        📸 Photo Editing
+    </button>
 
-        <button class="category" onclick="filterCategory('product')">
-            🛍️ Product
-        </button>
+    <button class="category" onclick="filterCategory('portrait')">
+        👤 Portrait & Avatar
+    </button>
 
-        <button class="category" onclick="filterCategory('creative')">
-            ✨ Creative
-        </button>
+    <button class="category" onclick="filterCategory('character')">
+        🧙 Character Design
+    </button>
 
-    </div>
+    <button class="category" onclick="filterCategory('anime')">
+        🎨 Anime & Cartoon
+    </button>
 
+    <button class="category" onclick="filterCategory('art')">
+        🖌️ Art Style
+    </button>
 
-    <h2 class="section-title" id="prompts">
-        🔥 Popular Prompts
-    </h2>
+    <button class="category" onclick="filterCategory('interior')">
+        🏠 Interior Design
+    </button>
 
+    <button class="category" onclick="filterCategory('vfx')">
+        🎬 Visual Effects
+    </button>
 
-    <div class="gallery" id="promptList">
+    <button class="category" onclick="filterCategory('logo')">
+        🔰 Logo Design
+    </button>
 
-
-        <div class="card" data-category="portrait">
-
-            <div class="image-placeholder">
-                👤
-            </div>
-
-            <div class="card-content">
-
-                <h3>Cinematic Portrait</h3>
-
-                <p class="prompt">
-                    Create a realistic cinematic portrait with
-                    natural skin texture, dramatic lighting,
-                    shallow depth of field and professional
-                    photography.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card" data-category="fashion">
-
-            <div class="image-placeholder">
-                👗
-            </div>
-
-            <div class="card-content">
-
-                <h3>Fashion Photography</h3>
-
-                <p class="prompt">
-                    Create a high-end fashion photograph of a
-                    stylish person standing in a modern urban
-                    environment with professional lighting.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card" data-category="cinematic">
-
-            <div class="image-placeholder">
-                🎬
-            </div>
-
-            <div class="card-content">
-
-                <h3>Movie Scene</h3>
-
-                <p class="prompt">
-                    Transform the scene into a cinematic movie
-                    frame with atmospheric lighting, realistic
-                    details, dramatic composition and film-like
-                    color grading.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card" data-category="anime">
-
-            <div class="image-placeholder">
-                🎨
-            </div>
-
-            <div class="card-content">
-
-                <h3>Anime Transformation</h3>
-
-                <p class="prompt">
-                    Transform the subject into a detailed anime
-                    character while preserving the main features,
-                    hairstyle, clothing and pose.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card" data-category="product">
-
-            <div class="image-placeholder">
-                🛍️
-            </div>
-
-            <div class="card-content">
-
-                <h3>Product Advertisement</h3>
-
-                <p class="prompt">
-                    Create a premium product advertisement with
-                    studio lighting, clean composition, realistic
-                    reflections and a professional commercial look.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="card" data-category="creative">
-
-            <div class="image-placeholder">
-                ✨
-            </div>
-
-            <div class="card-content">
-
-                <h3>Creative AI Scene</h3>
-
-                <p class="prompt">
-                    Create a visually stunning surreal scene with
-                    imaginative elements, detailed environments,
-                    cinematic lighting and realistic textures.
-                </p>
-
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    📋 Copy Prompt
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
+    <button class="category" onclick="filterCategory('creative')">
+        ✨ Creative
+    </button>
 
 </div>
 
 
+<!-- PROMPTS -->
+
+<h2 class="section-title" id="prompts">
+    🔥 Popular Prompts
+</h2>
+
+
+<div class="gallery" id="promptList">
+
+
+<!-- CARD 1 -->
+
+<div class="card" data-category="portrait">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+alt="Portrait"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+👤 Portrait & Avatar
+</span>
+
+<h3>Cinematic Portrait</h3>
+
+<p class="prompt">
+Create a realistic cinematic portrait with natural skin texture,
+dramatic lighting, shallow depth of field, detailed eyes,
+professional photography and a cinematic atmosphere.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="card" data-category="photo">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80"
+alt="Fashion"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+📸 Photo Editing
+</span>
+
+<h3>Fashion Photography</h3>
+
+<p class="prompt">
+Create a high-end fashion photograph in a modern urban environment,
+professional studio-quality lighting, realistic details,
+sharp focus and premium editorial photography style.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="card" data-category="vfx">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+alt="Cinematic"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+🎬 Visual Effects
+</span>
+
+<h3>Cinematic Movie Scene</h3>
+
+<p class="prompt">
+Transform the scene into a cinematic movie frame with atmospheric
+lighting, dramatic composition, realistic textures,
+depth and professional film photography.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="card" data-category="anime">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80"
+alt="Anime style"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+🎨 Anime & Cartoon
+</span>
+
+<h3>Anime Transformation</h3>
+
+<p class="prompt">
+Transform the subject into a detailed anime character while
+preserving the main features, hairstyle, clothing, pose,
+lighting and overall composition.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="card" data-category="ecommerce">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+alt="Product"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+🛍️ E-commerce
+</span>
+
+<h3>Premium Product Advertisement</h3>
+
+<p class="prompt">
+Create a premium product advertisement with clean studio lighting,
+realistic reflections, elegant composition, sharp product details
+and professional commercial photography.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="card" data-category="interior">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+alt="Interior"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+🏠 Interior Design
+</span>
+
+<h3>Luxury Interior</h3>
+
+<p class="prompt">
+Create a modern luxury interior with elegant furniture,
+warm natural lighting, realistic materials, detailed textures
+and professional architectural photography.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 7 -->
+
+<div class="card" data-category="logo">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+alt="Logo design"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+🔰 Logo Design
+</span>
+
+<h3>Modern Brand Logo</h3>
+
+<p class="prompt">
+Design a clean modern brand identity with a memorable logo,
+minimal composition, professional typography and premium
+branding presentation.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+<!-- CARD 8 -->
+
+<div class="card" data-category="creative">
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
+alt="Creative scene"
+>
+
+<div class="card-content">
+
+<span class="category-label">
+✨ Creative
+</span>
+
+<h3>Surreal Creative World</h3>
+
+<p class="prompt">
+Create a visually stunning surreal world with imaginative
+elements, incredible environments, cinematic lighting,
+realistic textures and highly detailed atmosphere.
+</p>
+
+<button class="copy-btn" onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-    <p>🍌 Nano Banana Prompts © 2026</p>
-    <br>
-    <p>Creative prompts for AI image generation.</p>
+<p>🍌 Nano Banana Prompts © 2026</p>
+
+<br>
+
+<p>
+Creative prompts for AI image generation.
+</p>
+
+<br>
+
+<p>
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+</p>
 
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
-function copyPrompt(button) {
+function copyPrompt(button){
 
     const card = button.closest(".card");
 
     const prompt = card.querySelector(".prompt").innerText;
 
-    navigator.clipboard.writeText(prompt);
+    navigator.clipboard.writeText(prompt)
+    .then(function(){
 
-    button.innerText = "✅ Copied!";
+        button.innerText = "✅ Copied!";
 
-    setTimeout(function() {
+        setTimeout(function(){
 
-        button.innerText = "📋 Copy Prompt";
+            button.innerText = "📋 Copy Prompt";
 
-    }, 1500);
+        },1500);
+
+    })
+    .catch(function(){
+
+        button.innerText = "❌ Copy failed";
+
+        setTimeout(function(){
+
+            button.innerText = "📋 Copy Prompt";
+
+        },1500);
+
+    });
 
 }
 
 
-function filterCategory(category) {
+function filterCategory(category){
 
     const cards = document.querySelectorAll(".card");
 
-    cards.forEach(function(card) {
+    cards.forEach(function(card){
 
-        if (
+        if(
             category === "all" ||
             card.dataset.category === category
-        ) {
+        ){
 
             card.style.display = "block";
 
-        } else {
+        }
+        else{
 
             card.style.display = "none";
 
@@ -510,7 +714,7 @@ function filterCategory(category) {
 }
 
 
-function searchPrompts() {
+function searchPrompts(){
 
     const search =
         document.getElementById("search")
@@ -520,16 +724,17 @@ function searchPrompts() {
     const cards =
         document.querySelectorAll(".card");
 
-    cards.forEach(function(card) {
+    cards.forEach(function(card){
 
         const text =
             card.innerText.toLowerCase();
 
-        if (text.includes(search)) {
+        if(text.includes(search)){
 
             card.style.display = "block";
 
-        } else {
+        }
+        else{
 
             card.style.display = "none";
 
